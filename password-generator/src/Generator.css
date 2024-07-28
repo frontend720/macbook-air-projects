@@ -1,0 +1,155 @@
+.title{
+    color: rgb(230, 229, 234);
+    text-align: center
+  }
+  
+  .container{
+    width: 100vw;
+    min-height: 100%;
+    background-color: #18171F;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 48px
+  }
+  
+  
+  input[type="range"] {
+    width: 100%;
+    background: #18171F;
+    /* -webkit-appearance: none; Remove default appearance */
+    appearance: none;
+    padding: 0px;
+    border-radius: 25px;
+    height: 10px
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    /* -webkit-appearance: none; */
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #E6E5EA;
+    cursor: pointer;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: rgb(164, 255, 175);
+    cursor: pointer;
+  }
+  
+  .character-length{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", monospace;
+  }
+  
+  .generator-form{
+    padding: 16px;
+    background-color: #24232C;
+    min-width: 350px;
+    max-width: 40%;
+    margin: 42px auto;
+    border-radius: 10px
+  }
+  
+  .feedback-container{
+  
+    min-width: 350px;
+    max-width: 40%;
+    margin: 0px auto
+  }
+  
+  .clipboard-feedback{
+  }
+  
+  .copy-container{
+    padding: 16px;
+    background-color: #24232C;
+    min-width: 350px;
+    width: 40%;
+    margin: 42px auto;
+    color: rgb(230, 229, 234);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px
+  }
+  
+  .characters{
+    color: rgb(164, 255, 175);
+  }
+  
+  p{
+    color: rgb(230, 229, 234)
+  }
+  
+  .password-result{
+    font-size: 24px
+  }
+  
+  label{
+    font-family: "JetBrains Mono", monospace;
+    color: rgb(230, 229, 234);
+    padding-left: 8px
+  }
+  
+  .criteria-container{
+    margin: 16px 0px
+  }
+  
+  .top{
+    margin-top: 42px
+  }
+  
+  .strength-meter{
+    background-color: #18171F;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    text-transform: uppercase;
+  }
+  
+  .weak{
+    color: #F64A4A
+  }
+  
+  .moderate{
+    color: #F8CD65
+  }
+  
+  .strong{
+    color: #a4ffaf
+  }
+  
+  .meter-title{
+    color: rgba(230, 229, 234, 0.523)
+  }
+
+  .save-button{
+    padding: 16px;
+    background-color: #24232C;
+    min-width: 350px;
+    max-width: 40%;
+    margin: 42px auto;
+    border-radius: 10px
+  }
+
+  .save-text{
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
