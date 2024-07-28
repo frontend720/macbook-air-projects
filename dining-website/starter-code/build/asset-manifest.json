@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3606a149.css",
+    "main.js": "/static/js/main.4a91a310.js",
+    "static/media/enjoyable-place-desktop.jpg": "/static/media/enjoyable-place-desktop.06399aa5ebbf3c5b8582.jpg",
+    "static/media/hero-bg-desktop.jpg": "/static/media/hero-bg-desktop.b1340563472e3dec531d.jpg",
+    "static/media/enjoyable-place-tablet.jpg": "/static/media/enjoyable-place-tablet.e7f1ede3969c61a05bf7.jpg",
+    "static/media/family-gathering-desktop.jpg": "/static/media/family-gathering-desktop.03b160290e9f76db87fc.jpg",
+    "static/media/special-events-desktop.jpg": "/static/media/special-events-desktop.f1f02a5221dd0cc83f2b.jpg",
+    "static/media/enjoyable-place-mobile.jpg": "/static/media/enjoyable-place-mobile.4b120c5a7c29e8ff14f0.jpg",
+    "static/media/special-events-tablet.jpg": "/static/media/special-events-tablet.4d0d6c6cf6dada00e1af.jpg",
+    "static/media/family-gathering-tablet.jpg": "/static/media/family-gathering-tablet.2adedf9d8ece9e556e5b.jpg",
+    "static/media/social-events-desktop.jpg": "/static/media/social-events-desktop.e78fd92c8902cb2e0e44.jpg",
+    "static/media/locally-sourced-desktop.jpg": "/static/media/locally-sourced-desktop.957d3e79f314ce6c5bdf.jpg",
+    "static/media/family-gathering-mobile.jpg": "/static/media/family-gathering-mobile.10e6f4edd97d1bfa2e29.jpg",
+    "static/media/hero-bg-tablet.jpg": "/static/media/hero-bg-tablet.eb68d55ad03563e8b064.jpg",
+    "static/media/special-events-mobile.jpg": "/static/media/special-events-mobile.3665c5e0f83b107a95a5.jpg",
+    "static/media/social-events-tablet.jpg": "/static/media/social-events-tablet.7751ea471a2564825ede.jpg",
+    "static/media/locally-sourced-tablet.jpg": "/static/media/locally-sourced-tablet.0e5e6f796a1dc6600c71.jpg",
+    "static/media/beef-mobile.jpg": "/static/media/beef-mobile.81249e77189ce8184e94.jpg",
+    "static/media/social-events-mobile.jpg": "/static/media/social-events-mobile.f8e0c0c2c12f68fb2fa8.jpg",
+    "static/media/hero-bg-mobile.jpg": "/static/media/hero-bg-mobile.56d0d7be02f8a5a5b653.jpg",
+    "static/media/locally-sourced-mobile.jpg": "/static/media/locally-sourced-mobile.b36f6a49aecd4697eec5.jpg",
+    "static/media/salmon-mobile.jpg": "/static/media/salmon-mobile.7bd94a874dd08ae9a3ca.jpg",
+    "static/media/chocolate-mobile.jpg": "/static/media/chocolate-mobile.22eddbf11e9f745ab4b0.jpg",
+    "index.html": "/index.html",
+    "main.3606a149.css.map": "/static/css/main.3606a149.css.map",
+    "main.4a91a310.js.map": "/static/js/main.4a91a310.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3606a149.css",
+    "static/js/main.4a91a310.js"
+  ]
+}
