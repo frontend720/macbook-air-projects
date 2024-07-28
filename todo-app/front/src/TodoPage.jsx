@@ -33,7 +33,7 @@ export default function TodoPage() {
   const [newTodo, setNewTodo] = useState("");
 
   const [response, setResponse] = useState();
-  const [everything, setEverything] = useState([])
+
 
   function createTodo(e) {
     e.preventDefault();
@@ -44,6 +44,9 @@ export default function TodoPage() {
         todo: newTodo,
         email: email,
       },
+      headers: {
+        'Access-Control-Allow-Origin': true
+      }
     })
       .then((todo) => {
         if (!newTodo) {
@@ -59,6 +62,7 @@ export default function TodoPage() {
       });
     getCompleted();
     setNewTodo("");
+    console.log("clicked")
   }
 
   
@@ -67,6 +71,9 @@ export default function TodoPage() {
     axios({
       method: "GET",
       url: `${process.env.REACT_APP_PORT}/${id}`,
+      headers: {
+        'Access-Control-Allow-Origin': true
+      }
     })
     .then((data) => {
       setTodo(data.data);
@@ -90,6 +97,9 @@ export default function TodoPage() {
       axios({
         method: "DELETE",
         url: `${process.env.REACT_APP_PORT}/${id}/${todoId}`,
+      headers: {
+        'Access-Control-Allow-Origin': true
+      }
       })
         .then((todo) => {
           console.log(todo.data);
@@ -137,7 +147,9 @@ export default function TodoPage() {
           </div>
           <div style={newTodo.length === 0 ? {display: "none"} : {display: ""}} className="btn_container">
             <button
-              disabled={newTodo.length>= 5 ? true : false}
+            type="submit"
+            onClick={createTodo}
+              disabled={newTodo.length <= 5 ? true : false}
               className="todo_button"
             >
               Submit
