@@ -46,8 +46,8 @@ videoRouter.get("/:username/:continuation_token", async (req, res) => {
       include_replies: "false",
     },
     headers: {
-      "x-rapidapi-key": "41f3f91b13mshaa0652a8c3b96f1p165abcjsn42e270cab71c",
-      "x-rapidapi-host": "twitter154.p.rapidapi.com",
+      "x-rapidapi-key": process.env.KEY,
+      "x-rapidapi-host": process.env.HOST,
     },
   });
   try {
