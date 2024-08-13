@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   background: ${({ color }) => (color ? color : "red")};
-  width: 100vw;
+  width: ${({width}) => width ? width : ""};
   min-height: 100vh;
   padding: ${({ padding }) => (padding ? padding : "0px")};
   // color: ${({ fontColor }) => (fontColor ? fontColor : "white")}

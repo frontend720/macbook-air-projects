@@ -66,13 +66,23 @@ function Feed() {
         setContinueArray(videos.data.results);
         setContinuationId(videos.data.continuation_token);
         console.log(videos.data.continuation_token);
+        
       })
       .catch((error) => {
         console.log(error);
       });
     setContinuationId("");
+    setVideoArray([])
+    scrollToTop()
   }
   console.log(continuationId);
+
+  function scrollToTop(){
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
 
   return (
     <div style={{ display: "flex", flexDirection: "column", width: breakpointsArr[0].mobileM  }}>
@@ -98,6 +108,7 @@ function Feed() {
           padding="32px"
           className="feed-container"
           color="#ffffff"
+          width={breakpointsArr[0].mobileM }
           //   fontColor="#333333"
         >
           <form
@@ -243,11 +254,7 @@ function Feed() {
           ))}
           <div style={{ width: breakpointsArr[0].mobileS, margin: "0px auto" }}>
             <Button
-              style={
-                toggle === false
-                  ? { display: "none" }
-                  : { width: breakpointsArr[0].mobileS, margin: "0px auto" }
-              }
+              style={{ width: breakpointsArr[0].mobileS, margin: "0px auto" }}
               onClick={paginate}
             >
               Next
