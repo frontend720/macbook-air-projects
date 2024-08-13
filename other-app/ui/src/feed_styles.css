@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.video-grid {
+  /* display: grid; */
+  /* grid-template-columns: repeat(3, 250px); */
+  /* gap: 10px; */
+  position: relative;
+  width: 90%;
+}
+
+.card-container {
+  /* position: absolute; */
+  width: 90%;
+}
+
+.card {
+  background: #4a4af044;
+  margin: 24px;
+  -webkit-box-shadow: -3px 20px 16px -16px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px 20px 16px -16px rgba(0, 0, 0, 0.75);
+  box-shadow: -3px 20px 16px -16px rgba(0, 0, 0, 0.75);
+}
+
+.list-container {
+  /* width: 80%; */
+  position: relative;
+  width: 80%;
+  list-style: none;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  max-width: 75%;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.timestamp {
+  font-family: "Lato", sans-serif;
+}
+
+.search-btn {
+  font-size: 20px;
+  background-color: #444444;
+  border: none;
+  color: #f2f2f2;
+  padding: 4px;
+}
+
+input {
+  border: none;
+  background-color: #f2c1b3;
+  font-size: 18px;
+  border-radius: 0px
+}
+
+input:focus {
+  outline: #444444;
+  background-color: #f2c1b3;
+}
+
+input::placeholder{
+    background-color: #f2c1b3;
+}
+
+.search-input {
+  border-left: 2px solid #444444;
+  border-top: 2px solid #444444;
+  border-bottom: 2px solid #444444;
+  background-color: #f2c1b33c !important;
+}
+
+.search-form {
+  -webkit-box-shadow: -3px -16px 16px -13px rgba(117, 69, 33, 1);
+  -moz-box-shadow: -3px -16px 16px -13px rgba(117, 69, 33, 1);
+  box-shadow: -3px -16px 16px -13px rgba(117, 69, 33, 1);
+}
