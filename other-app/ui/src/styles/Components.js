@@ -29,6 +29,7 @@ const Button = styled.button`
   -webkit-box-shadow: -3px 20px 16px -13px rgba(117, 69, 33, 1);
   -moz-box-shadow: -3px 20px 16px -13px rgba(117, 69, 33, 1);
   box-shadow: -3px 20px 16px -13px rgba(117, 69, 33, 1);
+  display: ${({display})=>display?display:"block"}
 `;
 
 export { Wrapper, Tile, Button };

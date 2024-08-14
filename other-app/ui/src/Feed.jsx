@@ -6,8 +6,7 @@ import {
   EllipsisOutlined,
   SettingOutlined,
   SearchOutlined,
-  RedoOutlined
-  
+  RedoOutlined,
 } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
 import { breakpointsArr } from "./styles/breakpoints";
@@ -16,12 +15,44 @@ import { Wrapper, Tile, Button } from "./styles/Components";
 axios.defaults.headers.common["ngrok-skip-browser-warning"] = true;
 
 function Feed() {
+  let stickyScroll = useRef(null);
+
+  function scroller() {
+    if (stickyScroll.current) {
+      stickyScroll.current.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }
+
   const [videoArray, setVideoArray] = useState([]);
   const [videoCollections, setVideoCollections] = useState([]);
   const [toggle, setToggle] = useState(false);
 
   const [username, setUsername] = useState("");
   const [flatArr, setFlatArr] = useState([]);
+
+
+  function refresh(){
+    axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_URL}/${username}/${continuationId}`,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+    })
+      .then((videos) => {
+        console.log(videos.data);
+        setContinueArray(videos.data.results);
+        setContinuationId(videos.data.continuation_token);
+        console.log(videos.data.continuation_token);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   function searchUser(e) {
     e.preventDefault();
     axios({
@@ -39,12 +70,15 @@ function Feed() {
         setVideoArray(videos.data);
         setContinuationId(videos.data.continuation_token);
         setToggle((prev) => !prev);
+        setTimeout(()=>{
+            refresh()
+        },250)
         console.log(videos.data);
       })
       .catch((error) => {
         console.log(error);
       });
-    setVideoCollections(videoArray);
+      setVideoCollections(videoArray);
   }
   // console.log(continuationId)
   const continueOn = videoArray.map((cont) =>
@@ -69,32 +103,40 @@ function Feed() {
         setContinueArray(videos.data.results);
         setContinuationId(videos.data.continuation_token);
         console.log(videos.data.continuation_token);
-        
       })
       .catch((error) => {
         console.log(error);
       });
+    scroller();
     setContinuationId("");
     // setVideoArray([])
-    scrollToTop()
+    scrollToTop();
   }
   console.log(continuationId);
 
-  function scrollToTop(){
+  function scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
-    })
+      behavior: "smooth",
+    });
   }
 
-  function reset(){
-    scrollToTop()
-    setContinueArray([])
-    setVideoArray([])
+  function reset() {
+    scrollToTop();
+    setContinueArray([]);
+    setVideoArray([]);
   }
+
+  console.log(videoArray);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", width: breakpointsArr[0].mobileM  }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        width: breakpointsArr[0].mobileM,
+      }}
+    >
       {continueOn === undefined ? (
         <>
           {" "}
@@ -117,10 +159,11 @@ function Feed() {
           padding="32px"
           className="feed-container"
           color="#ffffff"
-          width={breakpointsArr[0].mobileM }
+          width={breakpointsArr[0].mobileM}
           //   fontColor="#333333"
         >
           <form
+            ref={stickyScroll}
             className="search-form"
             style={{
               width: breakpointsArr[0].mobileS,
@@ -139,6 +182,9 @@ function Feed() {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="search-input"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
             />
             <button className="search-btn" type="submit">
               <SearchOutlined />
@@ -150,16 +196,33 @@ function Feed() {
         className="card-container"
       >
         <div className="list-container"> */}
-          {videoArray?.map((point) =>
+
+        {/* last edit marked out below */}
+
+          {/* {videoArray?.map((point) =>
             point.results?.map((tap) => (
               <Tile
+                style={
+                  continueArray.length > 0
+                    ? { display: "none" }
+                    : { display: "block" }
+                }
                 width={breakpointsArr[0].mobileS}
                 color="#F2F2F2"
                 padding="6px"
               >
                 <div key={tap.tweet_id}>
-                  <header style={{ width: breakpointsArr[0].mobileS, marginBottom: 6 }}>
-                    <img style={{paddingRight: 6, borderRadius: 5}} src={tap.user.profile_pic_url} alt="" />
+                  <header
+                    style={{
+                      width: breakpointsArr[0].mobileS,
+                      marginBottom: 6,
+                    }}
+                  >
+                    <img
+                      style={{ paddingRight: 6, borderRadius: 5 }}
+                      src={tap.user.profile_pic_url}
+                      alt=""
+                    />
                     <div className="header-info">
                       <label className="username">{tap.user.username}</label>
                       <small className="timestamp">
@@ -169,7 +232,7 @@ function Feed() {
                   </header>
                   <label>{tap.text}</label>
 
-                  <div style={{marginTop: 6}} className="video-grid">
+                  <div style={{ marginTop: 6 }} className="video-grid">
                     {tap.video_url?.length > 0 && (
                       <div
                         style={{ width: breakpointsArr[0].mobileS }}
@@ -177,6 +240,11 @@ function Feed() {
                       >
                         <section className="">
                           <video
+                            autoPlay
+                            playsInline
+                            loop="true"
+                            // autoPlay="true"
+                            muted
                             style={{ width: breakpointsArr[0].mobileS }}
                             key={tap.video_url[0].url}
                             controls
@@ -204,7 +272,9 @@ function Feed() {
                 </div>
               </Tile>
             ))
-          )}
+          )} */}
+
+          {/*last edit marked out above*/}
           {/* </div>
       </div> */}
 
@@ -234,6 +304,11 @@ function Feed() {
                     >
                       <section className="">
                         <video
+                          autoPlay
+                          playsInline
+                          muted
+                          loop="true"
+                          // autoPlay="true"
                           style={{ width: breakpointsArr[0].mobileS }}
                           key={tap.video_url[0].url}
                           controls
@@ -263,14 +338,24 @@ function Feed() {
           ))}
           <div style={{ width: breakpointsArr[0].mobileS, margin: "0px auto" }}>
             <Button
+              display={videoArray.length > 0 ? "block" : "none"}
               style={{ width: breakpointsArr[0].mobileS, margin: "0px auto" }}
               onClick={paginate}
             >
               Next
             </Button>
-            <button style={{marginTop: 16, border: "none", background: "transparent"}} onClick={reset}>
-              <label htmlFor="" style={{fontSize: 20}}>
-            <RedoOutlined size="32px" />
+            <button
+              style={{
+                marginTop: 16,
+                border: "none",
+                background: "transparent",
+              }}
+              onClick={reset}
+            >
+              <label htmlFor="" style={{ fontSize: 20 }}>
+                <h4 style={{ color: "#ff9f68", fontWeight: "bold" }}>
+                  <RedoOutlined size="32px" />
+                </h4>
               </label>
             </button>
           </div>
