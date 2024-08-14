@@ -6,13 +6,16 @@ import {
   EllipsisOutlined,
   SettingOutlined,
   SearchOutlined,
+  RedoOutlined
+  
 } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
 import { breakpointsArr } from "./styles/breakpoints";
 import { Wrapper, Tile, Button } from "./styles/Components";
 
+axios.defaults.headers.common["ngrok-skip-browser-warning"] = true;
+
 function Feed() {
-  axios.defaults.headers.common["ngrok-skip-browser-warning"] = true;
   const [videoArray, setVideoArray] = useState([]);
   const [videoCollections, setVideoCollections] = useState([]);
   const [toggle, setToggle] = useState(false);
@@ -29,7 +32,7 @@ function Feed() {
         // limit: 100,
       },
       headers: {
-        "Access-Control-Allow-Origin": true,
+        "Access-Control-Allow-Origin": "*",
       },
     })
       .then((videos) => {
@@ -58,7 +61,7 @@ function Feed() {
       method: "GET",
       url: `${process.env.REACT_APP_URL}/${username}/${continuationId}`,
       headers: {
-        "Access-Control-Allow-Origin": true,
+        "Access-Control-Allow-Origin": "*",
       },
     })
       .then((videos) => {
@@ -72,7 +75,7 @@ function Feed() {
         console.log(error);
       });
     setContinuationId("");
-    setVideoArray([])
+    // setVideoArray([])
     scrollToTop()
   }
   console.log(continuationId);
@@ -82,6 +85,12 @@ function Feed() {
       top: 0,
       behavior: "smooth"
     })
+  }
+
+  function reset(){
+    scrollToTop()
+    setContinueArray([])
+    setVideoArray([])
   }
 
   return (
@@ -115,7 +124,7 @@ function Feed() {
             className="search-form"
             style={{
               width: breakpointsArr[0].mobileS,
-              margin: "0px auto",
+              margin: "20px auto",
               display: "flex",
               justifyContent: "space-between",
               fontSize: 20,
@@ -259,6 +268,11 @@ function Feed() {
             >
               Next
             </Button>
+            <button style={{marginTop: 16, border: "none", background: "transparent"}} onClick={reset}>
+              <label htmlFor="" style={{fontSize: 20}}>
+            <RedoOutlined size="32px" />
+              </label>
+            </button>
           </div>
         </Wrapper>
       )}
