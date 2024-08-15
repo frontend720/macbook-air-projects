@@ -17,6 +17,8 @@ const Tile = styled.div`
   -webkit-box-shadow: -3px 20px 16px -23px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -3px 20px 16px -23px rgba(0, 0, 0, 0.75);
   box-shadow: -3px 20px 16px -23px rgba(0, 0, 0, 0.75);
+  display: ${({display}) => display ? display : "block"};
+  border: ${({border}) => border ? border : "none"}
 `;
 const Button = styled.button`
   background: #444444;
