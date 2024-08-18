@@ -1,0 +1,50 @@
+.feed-container{
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+    background-color: #444444;
+}
+
+img{
+    width:50px;
+    border-radius: 5px;
+    background-position: center;
+    background-size: auto;
+    object-fit: cover;    
+}
+
+
+
+ .username-search{
+    width: 90%;
+    margin: 0px auto;
+    background: #777777;
+    font-size: 16px;
+    padding: 4px
+ }
+
+ .username-search:focus{
+    outline: #222222;
+    border: 1px solid #222222;
+    caret-color: #ffffff;
+ }
+
+ .pagination-container{
+   width: 90%;
+   display: flex;
+   /* flex-direction: row; */
+   justify-content: space-between;
+   margin: 24px auto
+   /* width: 100%; */ 
+ }
+
+ .pagination-button{
+   background: transparent;
+   color: #e8e8e8;
+   border: none
+ }
+
+ .search{
+   text-align: center;
+   margin: 0px auto
+ }

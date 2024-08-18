@@ -1,0 +1,33 @@
+.video {
+  margin-top: 10px;
+  border-radius: 5;
+  height: 200px;
+/* object-fit: cover; */
+margin-top: 10px;
+width: 100%;
+background-position: top;
+margin-bottom: 10px
+}
+
+.video-opened{
+    margin-top: 10px;
+    border-radius: 5;
+    height: 100%
+}
+
+.post-image{
+    /* clip-path: polygon(0 0, 100% 0, 100% calc(100% - bottom-crop-percentage), 0 calc(100% - bottom-crop-percentage)); */
+height: 200px;
+object-fit: cover;
+margin-top: 10px;
+width: 100%;
+background-position: top;
+margin-bottom: 10px
+} 
+
+.post-image-closed{
+height: 100%;
+margin-top: 10px;
+width: 100%;
+margin-bottom: 10px
+}
