@@ -24,6 +24,21 @@ nav {
   color: #e8e8e8b6
 }
 
+.scroll-container{
+  height: 200px; /* Adjust the height as needed */
+  overflow-y: scroll;
+  margin: 12px auto;
+  border: 2px solid #555555;
+  padding: 4px;
+  border-radius: 5px
+}
+
+.search-list{
+  list-style: none;
+  text-align: left;
+  padding: 4px
+}
+
 @media (max-width: 1475px) {
   .toggle-icon {
     margin: 7px;

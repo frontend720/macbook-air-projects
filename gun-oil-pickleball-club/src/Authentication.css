@@ -1,0 +1,57 @@
+.authentication-container {
+
+  position: absolute;
+}
+
+.auth-title{
+    color: #333333
+}
+
+.helper-text{
+    font-weight: 900;
+    color: #333333
+}
+
+.authentication-form {
+    width: 80vw;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    padding: 24px
+}
+
+.authentication-input{
+    font-size: 18px;
+    padding: 6px;
+    border-radius: 0px 25px 25px 0px;
+    margin: 12px 0px;
+    border: 6px solid #333333;
+  
+    background-color: #3333330e;
+    color: #e8e8e8ac
+}
+
+
+.authentication-input:focus{
+    outline: none;
+    color: #e8e8e8ac
+}
+
+.authentication-button{
+    font-size: 24px;
+    font-weight:800;
+    background: #333333;
+    padding: 6px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 0px 25px 25px 0px;
+    color: #e8e8e8;
+    margin-bottom: 20px
+}
+
+.authentication-toggle{
+    font-weight: 600;
+    text-align: right;
+    color: #e8e8e8
+    
+}

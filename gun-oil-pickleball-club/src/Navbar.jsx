@@ -4,16 +4,18 @@ import { RiMenu5Line, RiMenu4Line, RiSearchLine } from "react-icons/ri";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "./Navbar.css";
+import {getAuth, onAuthStateChanged, signOut} from "firebase/auth"
+import app from "./config";
 
 export default function Navbar({
-  title,
-  username,
-  handleChange,
-  value,
   name,
   inputChange,
   submit,
+  userSelect
 }) {
+
+const auth = getAuth(app)
+
   const [screenWidth, setScreenWidth] = useState(window.screenWidth);
   const [screenSize, setScreenSize] = useState(0);
   const [toggleNav, setToggleNav] = useState(false);
@@ -22,7 +24,7 @@ export default function Navbar({
 
   const { contextSafe } = useGSAP({ scope: container });
 
-  console.log(name);
+  const userCollection = JSON.parse(localStorage.getItem("users"))
 
   useEffect(() => {
     setScreenWidth(
@@ -68,8 +70,18 @@ export default function Navbar({
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       submit(event)
+      rollupNav()
     }
   };
+
+  function logout(){
+    signOut(auth).then((user) => {
+      console.log(user)
+    }).catch((error) => {
+      console.log(error)
+    })
+    rollupNav()
+  }
 
   return (
     <div className="nav-container" ref={container}>
@@ -139,7 +151,20 @@ export default function Navbar({
           Home{" "}
         </label>
         <label onClick={rollupNav} className="nav-item" href="">
-          Products
+          Searches
+          <div className="scroll-container">
+
+          <ul className="search-list">
+          {
+            userCollection?.map((user) => (
+              <li onClick={userSelect} style={{fontSize: 16}}>
+                {user}
+              </li>
+            ))
+          }
+
+          </ul>
+          </div>
         </label>
         <label onClick={rollupNav} className="nav-item" href="">
           About
@@ -147,8 +172,8 @@ export default function Navbar({
         <label onClick={rollupNav} className="nav-item" href="">
           Contact Us
         </label>
-        <label onClick={rollupNav} className="nav-item" href="">
-          Cart
+        <label onClick={logout} className="nav-item" href="">
+          Logout
         </label>
       </nav>
     </div>
