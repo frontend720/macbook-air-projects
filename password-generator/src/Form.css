@@ -1,0 +1,53 @@
+.website-input{
+    border: 6px solid #333333;
+    background: #ffffffaa;
+    /* width: 100%; */
+    margin: 12px auto;
+    font-size: 18px;
+    padding: 3px;
+     border-radius: 15px;
+     width: 60%;
+    /* width: 100% */
+    padding-left: 16px;
+
+
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    padding: 16px;
+    background-color: #24232C;
+    margin: 42px auto;
+    border-radius: 10px;
+    min-width: 350px;
+    margin-bottom: 16px
+    
+}
+
+.close_container{
+    width: 40%;
+    min-width: 350px;
+    margin: 0px auto
+}
+
+.submit-btn{
+    background:#A4FFAF;
+    border: none;
+    color: #24232C;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-text{
+    color: #24232C;
+    padding-right: 10px
+}
