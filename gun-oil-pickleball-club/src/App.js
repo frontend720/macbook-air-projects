@@ -40,11 +40,11 @@ function App() {
   return (
     <div className="App">
       {userObj !== null ? <Home /> : <Authentication />}
-      <header className="App-header">
+      {/* <header className="App-header">
         <div>
           <h1>{screenSize}</h1>
         </div>
-      </header>
+      </header> */}
     </div>
   );
 }

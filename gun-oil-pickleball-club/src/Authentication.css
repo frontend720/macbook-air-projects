@@ -52,6 +52,17 @@
 .authentication-toggle{
     font-weight: 600;
     text-align: right;
-    color: #e8e8e8
+    color: #e8e8e8;
+    display: inline-block;
+    width: 100%
     
+}
+
+.forgot{
+    font-weight: 600;
+    text-align: left;
+    color: #e8e8e8;
+   /* gap: 20px */
+   margin-top: 50px !important
+
 }

@@ -19,6 +19,7 @@ const auth = getAuth(app)
   const [screenWidth, setScreenWidth] = useState(window.screenWidth);
   const [screenSize, setScreenSize] = useState(0);
   const [toggleNav, setToggleNav] = useState(false);
+  const [resetSent, setResetSent] = useState(false)
 
   const container = useRef(null);
 
