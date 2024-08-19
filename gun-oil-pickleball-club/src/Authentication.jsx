@@ -20,6 +20,7 @@ export default function Authentication() {
   const [resetSent, setResetSent] = useState(false);
 
   function dissapearingError() {
+    // Replace with gsap code
       setTimeout(() => {
         setError("")
         setResetSent(false)

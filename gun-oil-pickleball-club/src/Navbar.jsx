@@ -27,16 +27,6 @@ const auth = getAuth(app)
 
   const userCollection = JSON.parse(localStorage.getItem("users"))
 
-  useEffect(() => {
-    setScreenWidth(
-      window.addEventListener("resize", () => {
-        const innerWidth = window.innerWidth;
-        setScreenSize(innerWidth);
-        console.log(innerWidth);
-      })
-    );
-  }, [screenSize]);
-
   const rolloutNav = contextSafe(() => {
     gsap.to(".nav-item", { stagger: 0.25, opacity: 1 });
     setToggleNav(true);
