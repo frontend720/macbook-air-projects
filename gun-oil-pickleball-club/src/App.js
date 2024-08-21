@@ -4,6 +4,7 @@ import { onAuthStateChanged, getAuth } from "firebase/auth";
 import app from "./config";
 import Home from "./Home";
 import Authentication from "./Authentication";
+import Loading from "./Loading";
 
 function App() {
   const [userObj, setUserObj] = useState();
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App">
       {userObj !== null ? <Home /> : <Authentication />}
+      {/* <Loading /> */}
     </div>
   );
 }

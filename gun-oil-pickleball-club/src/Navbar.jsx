@@ -65,6 +65,8 @@ const auth = getAuth(app)
     }
   };
 
+
+
   function logout(){
     signOut(auth).then((user) => {
       console.log(user)

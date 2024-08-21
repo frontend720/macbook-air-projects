@@ -28,7 +28,7 @@ export default function Loading() {
 
   return (
     <div ref={lettersRef}>
-      <div style={{margin: "6em 4em"}}>
+      <div style={{margin: "0px 4em", paddingTop: "6em"}}>
         {loadingArr.map((letter) => (
           <div className="loading-container" key={uuidv4()}>
             <label style={{color: "#333333"}} className="animated-letter">{letter}</label>
