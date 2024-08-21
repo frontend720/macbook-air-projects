@@ -125,7 +125,7 @@ export default function Home() {
       .then((data) => {
         if (data.data && data.data.results) {
           // Edited
-          setPosts(...data.data?.results);
+          setPosts(data.data?.results);
           setContinuationId(data.data.continuation_token);
         } else {
           setPosts("No User");
