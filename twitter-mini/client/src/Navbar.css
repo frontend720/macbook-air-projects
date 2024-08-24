@@ -1,0 +1,29 @@
+.navbar-brand-light{
+    color: #222222 !important
+}
+
+.navbar-brand-dark{
+    color: #E8e6e8
+}
+
+.nav-link{
+    /* color: #ffffff */
+}
+
+.nav-link-light{
+    color:#222222;
+}
+
+.nav-link-dark{
+    color: #E8e6e8
+}
+
+.nav-link:active{
+   color: #e8e8e8 !important
+}
+
+.exclamation{
+    font-size: 24px;
+    margin-left: 6px;
+    opacity: 0;
+}
